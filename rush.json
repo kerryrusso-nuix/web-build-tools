@@ -128,39 +128,6 @@
     "ignoredNpmScopes": ["@types"]
   },
 
-  /**
-   * If you use Git as your version control system, this section has some additional
-   * optional features you can use.
-   */
-  "gitPolicy": {
-    /**
-     * Work at a big company?  Tired of finding Git commits at work with unprofessional Git
-     * emails such as "beer-lover@my-college.edu"?  Rush can validate people's Git email address
-     * before they get started.
-     *
-     * Define a list of regular expressions describing allowable e-mail patterns for Git commits.
-     * They are case-insensitive anchored JavaScript RegExps.  Example: ".*@example\.com"
-     *
-     * IMPORTANT: Because these are regular expressions encoded as JSON string literals,
-     * RegExp escapes need two backspashes, and ordinary periods should be "\\.".
-     */
-    // "allowedEmailRegExps": [
-    //  "[^@]+@users\\.noreply\\.github\\.com",
-    //  "travis@example\\.org"
-    // ],
-    "allowedEmailRegExps": [
-      "[^@]+@users\\.noreply\\.github\\.com",
-      "travis@example\\.org"
-    ],
-
-    /**
-     * When Rush reports that the address is malformed, the notice can include an example
-     * of a recommended email.  Make sure it conforms to one of the allowedEmailRegExps
-     * expressions.
-     */
-    "sampleEmail": "mrexample@users.noreply.github.com"
-  },
-
   "repository": {
     /**
      * This setting is sometimes needed when using "rush change" with multiple Git remotes.
