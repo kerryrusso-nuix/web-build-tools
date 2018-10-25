@@ -35,7 +35,6 @@
    * Options that are only used when the PNPM package manager is selected
    */
   "pnpmOptions": {
-
     /**
      * If true, then Rush will add the "--strict-peer-dependencies" option when invoking PNPM.
      * This causes "rush install" to fail if there are unsatisfied peer dependencies, which is
@@ -57,7 +56,7 @@
    * Specify a SemVer range to ensure developers use a NodeJS version that is appropriate
    * for your repo.
    */
-  "nodeSupportedVersionRange": ">=8.9.4 <9.0.0 || >=10.12.0 <11.0.0",
+  "nodeSupportedVersionRange": ">=8.9.4 <9.0.0 || >=10.6.0 <11.0.0",
 
   /**
    * If you would like the version specifiers for your dependencies to be consistent, then
@@ -67,7 +66,7 @@
    * version. In those cases, you will need to add an entry to the "allowedAlternateVersions"
    * section of the common-versions.json.
    */
-   "ensureConsistentVersions": true,
+  "ensureConsistentVersions": true,
 
   /**
    * Large monorepos can become intimidating for newcomers if project folder paths don't follow
@@ -102,32 +101,32 @@
    * The approvals are tracked in two config files "browser-approved-packages.json"
    * and "nonbrowser-approved-packages.json".  See the Rush documentation for details.
    */
-   "approvedPackagesPolicy": {
-     /**
-      * The review categories allow you to say for example "This library is approved for usage
-      * in prototypes, but not in production code."
-      *
-      * Each project can be associated with one review category, by assigning the "reviewCategory" field
-      * in the "projects" section of rush.json.  The approval is then recorded in the files
-      * "common/config/rush/browser-approved-packages.json" and "nonbrowser-approved-packages.json"
-      * which are automatically generated during "rush update".
-      *
-      * Designate categories with whatever granularity is appropriate for your review process,
-      * or you could just have a single category called "default".
-      */
-     "reviewCategories": [
-       "libraries",  // library projects that ship
-       "tests",      // non-shipping test projects
-     ],
+  "approvedPackagesPolicy": {
+    /**
+     * The review categories allow you to say for example "This library is approved for usage
+     * in prototypes, but not in production code."
+     *
+     * Each project can be associated with one review category, by assigning the "reviewCategory" field
+     * in the "projects" section of rush.json.  The approval is then recorded in the files
+     * "common/config/rush/browser-approved-packages.json" and "nonbrowser-approved-packages.json"
+     * which are automatically generated during "rush update".
+     *
+     * Designate categories with whatever granularity is appropriate for your review process,
+     * or you could just have a single category called "default".
+     */
+    "reviewCategories": [
+      "libraries", // library projects that ship
+      "tests" // non-shipping test projects
+    ],
 
-     /**
-      * A list of NPM package scopes that will be excluded from review.
-      * We recommend to exclude TypeScript typings (the "@types" scope), because
-      * if the underlying package was already approved, this would imply that the typings
-      * are also approved.
-      */
-      "ignoredNpmScopes": [ "@types" ]
-   },
+    /**
+     * A list of NPM package scopes that will be excluded from review.
+     * We recommend to exclude TypeScript typings (the "@types" scope), because
+     * if the underlying package was already approved, this would imply that the typings
+     * are also approved.
+     */
+    "ignoredNpmScopes": ["@types"]
+  },
 
   /**
    * If you use Git as your version control system, this section has some additional
@@ -356,9 +355,7 @@
       "projectFolder": "core-build/gulp-core-build",
       "reviewCategory": "libraries",
       "shouldPublish": true,
-      "cyclicDependencyProjects": [
-        "@microsoft/node-library-build"
-      ]
+      "cyclicDependencyProjects": ["@microsoft/node-library-build"]
     },
     {
       "packageName": "@microsoft/gulp-core-build-karma",
@@ -371,9 +368,7 @@
       "projectFolder": "core-build/gulp-core-build-mocha",
       "reviewCategory": "libraries",
       "shouldPublish": true,
-      "cyclicDependencyProjects": [
-        "@microsoft/node-library-build"
-      ]
+      "cyclicDependencyProjects": ["@microsoft/node-library-build"]
     },
     {
       "packageName": "@microsoft/gulp-core-build-sass",
@@ -392,9 +387,7 @@
       "projectFolder": "core-build/gulp-core-build-typescript",
       "reviewCategory": "libraries",
       "shouldPublish": true,
-      "cyclicDependencyProjects": [
-        "@microsoft/node-library-build"
-      ]
+      "cyclicDependencyProjects": ["@microsoft/node-library-build"]
     },
     {
       "packageName": "@microsoft/gulp-core-build-webpack",
@@ -467,9 +460,7 @@
       "projectFolder": "stack/rush-stack",
       "reviewCategory": "libraries",
       "shouldPublish": true,
-      "cyclicDependencyProjects": [
-        "@microsoft/node-library-build"
-      ]
+      "cyclicDependencyProjects": ["@microsoft/node-library-build"]
     },
     {
       "packageName": "@microsoft/rush-stack-compiler",
